@@ -1,9 +1,3 @@
-
-# Frontend-learning
-<pre>
-  Continuous Learning...
-</pre>
-
 ## Commit standard
 ```shell
 npm i && npm run cm
@@ -33,11 +27,3 @@ const parseFileCtx = (filePath) => {
 
 dirTitleHandle(rootPath);
 ```
-
-<pre>Css
-    Flex: flex学习
-buildReadMe: ReadMe构建工具
-js: js console
-position
-    position.js:  position example
-</pre>
