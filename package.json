@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/KingThq/frontend-learning/issues"
   },
-  "homepage": "https://github.com/KingThq/frontend-learning#readme"
+  "homepage": "https://github.com/KingThq/frontend-learning#readme",
+  "devDependencies": {}
 }

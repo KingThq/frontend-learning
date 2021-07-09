@@ -169,6 +169,8 @@ const main = () => {
   traverseTitleItem();
   createReadMeCtx();
   writeNewReadMe();
+  addAllFiles();
+  commitAllFiles();
 }
 
 main();

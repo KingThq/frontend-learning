@@ -38,6 +38,7 @@ dirTitleHandle(rootPath);
     Flex: flex学习
 buildReadMe: ReadMe构建工具
 js: js console
-position
-    position.js:  position example
+utils
+    storage.js:  封装 storage 方法
+    urlPushState.js:  在 URL 上添加参数
 </pre>
