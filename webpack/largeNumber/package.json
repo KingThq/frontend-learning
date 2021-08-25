@@ -1,7 +1,7 @@
 {
   "name": "largenumber",
   "version": "1.0.0",
-  "description": "大整数加法打包",
+  "description": "大整数加法打包(打包基础库)",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
