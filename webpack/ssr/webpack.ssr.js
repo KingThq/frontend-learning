@@ -139,4 +139,5 @@ module.exports = {
       });
     },
   ].concat(htmlWebpackPlugins),
+  stats: 'errors-only',
 };
