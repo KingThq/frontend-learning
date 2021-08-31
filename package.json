@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npx commitizen init cz-conventional-changelog --save-dev --save-exact",
     "cm": "node buildReadMe"
   },
   "repository": {
@@ -17,5 +18,14 @@
     "url": "https://github.com/KingThq/frontend-learning/issues"
   },
   "homepage": "https://github.com/KingThq/frontend-learning#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
