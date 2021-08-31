@@ -1,0 +1,45 @@
+{
+  "name": "builder-webpack",
+  "version": "1.0.0",
+  "description": "构建基础包配置及冒烟测试和单元测试",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/_mocha",
+    "coverage": "nyc npm run test",
+    "eslint": "eslint ./lib --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.3.2",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^6.2.0",
+    "cssnano": "^5.0.8",
+    "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "glob": "^7.1.7",
+    "html-webpack-externals-plugin": "^3.8.0",
+    "html-webpack-plugin": "^4.5.2",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "mini-css-extract-plugin": "^1.6.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.8",
+    "postcss-loader": "^4.3.0",
+    "px2rem-loader": "^0.1.9",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "glob-all": "^3.2.1",
+    "mocha": "^9.1.1",
+    "rimraf": "^3.0.2"
+  }
+}
