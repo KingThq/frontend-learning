@@ -1,11 +1,16 @@
 const glob = require("glob");
 const path = require("path");
+const cssnano = require("cssnano");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackExternalsPlugin = require("html-webpack-externals-plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const SpeedMeasureWebpackPlugin = require("speed-measure-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
+// 构建速度分析
+const smp = new SpeedMeasureWebpackPlugin();
 
 // 多页面打包
 const setMPA = () => {
@@ -49,7 +54,7 @@ const setMPA = () => {
 
 const { entry, htmlWebpackPlugins } = setMPA();
 
-module.exports = {
+const config = {
   entry,
   output: {
     path: path.join(__dirname, "dist"),
@@ -61,7 +66,15 @@ module.exports = {
     rules: [
       {
         test: /.js$/,
-        use: ["babel-loader"],
+        use: [
+          // {
+          //   loader: 'thread-loader', // 资源并行解析
+          //   options: {
+          //     workers: 3,
+          //   },
+          // },
+          "babel-loader",
+        ],
       },
       {
         test: /.css$/,
@@ -120,10 +133,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]_[contenthash:8].css",
     }),
-    // new OptimizeCSSAssetsPlugin({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: require('cssnano'),
-    // }),
+    new OptimizeCSSAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: cssnano(),
+    }),
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
     function () {
@@ -139,5 +152,16 @@ module.exports = {
       });
     },
   ].concat(htmlWebpackPlugins),
+  optimization: {
+    minimizer: [
+      // 并行压缩
+      new TerserPlugin({
+        parallel: true,
+      }),
+    ],
+  },
   stats: 'errors-only',
 };
+
+// module.exports = smp.wrap(config);
+module.exports = config;
