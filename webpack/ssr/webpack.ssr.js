@@ -66,13 +66,14 @@ const config = {
     rules: [
       {
         test: /.js$/,
+        exclude: /node_modules/,
         use: [
-          // {
-          //   loader: 'thread-loader', // 资源并行解析
-          //   options: {
-          //     workers: 3,
-          //   },
-          // },
+          {
+            loader: 'thread-loader', // 资源并行解析
+            options: {
+              workers: 3,
+            },
+          },
           "babel-loader",
         ],
       },
@@ -112,6 +113,29 @@ const config = {
               esModule: false,
               name: "[name]_[hash:8].[ext]",
               limit: 10240,
+            },
+          },
+          {
+            loader: "image-webpack-loader", // 图片压缩
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
             },
           },
         ],
@@ -154,9 +178,10 @@ const config = {
   ].concat(htmlWebpackPlugins),
   optimization: {
     minimizer: [
-      // 并行压缩
+      // 并行压缩,开启缓存
       new TerserPlugin({
         parallel: true,
+        cache: true,
       }),
     ],
   },
