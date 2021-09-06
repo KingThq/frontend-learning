@@ -34,6 +34,9 @@ const parseFileCtx = (filePath) => {
 dirTitleHandle(rootPath);
 ```
 
+## Thanks
+>The generation of the README.md draws lessons from here([daoerche](https://github.com/daoerche/daoerche)).
+
 <pre>Css
     Flex: flex学习
 buildReadMe: ReadMe构建工具
