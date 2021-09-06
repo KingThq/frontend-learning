@@ -1,0 +1,17 @@
+{
+  "name": "raw-loader",
+  "version": "1.0.0",
+  "description": "实现 raw-loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "loader-runner": "^4.2.0"
+  },
+  "devDependencies": {
+    "loader-utils": "^2.0.0"
+  }
+}

@@ -47,7 +47,10 @@ utils
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
-    loaderOrder: 多 loader 执行顺序（从右到左）串行执行
+    loader
+        loaderOrder: 多 loader 执行顺序（从右到左）串行执行
+        rawLoader: 实现 raw-loader
+        simpleSpriteLoader: 简易合成雪碧图 loader
     simpleWebpack: 手写简易 webpack
     ssr: 实现SSR打包
     tapableTest: webpack tapable 的使用及 compiler 实现
