@@ -34,9 +34,6 @@ const parseFileCtx = (filePath) => {
 dirTitleHandle(rootPath);
 ```
 
-## Thanks
->The generation of the README.md draws lessons from here([daoerche](https://github.com/daoerche/daoerche)).
-
 <pre>Css
     Flex: flex学习
 buildReadMe: ReadMe构建工具
@@ -54,6 +51,8 @@ webpack
         loaderOrder: 多 loader 执行顺序（从右到左）串行执行
         rawLoader: 实现 raw-loader
         simpleSpriteLoader: 简易合成雪碧图 loader
+    plugins
+        zipPlugin: 一个压缩构建资源为 zip 包的插件
     simpleWebpack: 手写简易 webpack
     ssr: 实现SSR打包
     tapableTest: webpack tapable 的使用及 compiler 实现
