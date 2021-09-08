@@ -36,6 +36,11 @@ dirTitleHandle(rootPath);
 
 <pre>Css
     Flex: flex学习
+algorithm
+    List
+        ReverseList
+            index.js:  普通反转链表
+            intervalReverse.js:  区间反转链表
 buildReadMe: ReadMe构建工具
 js
     asyncRetryFn.js:  异步重试函数
