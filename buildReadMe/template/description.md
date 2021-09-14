@@ -27,3 +27,6 @@ const parseFileCtx = (filePath) => {
 
 dirTitleHandle(rootPath);
 ```
+
+## Thanks
+README generate thanks [daoerche](https://github.com/daoerche)

@@ -34,6 +34,9 @@ const parseFileCtx = (filePath) => {
 dirTitleHandle(rootPath);
 ```
 
+## Thanks
+README generate thanks [daoerche](https://github.com/daoerche)
+
 <pre>Css
     Flex: flex学习
 algorithm
