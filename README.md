@@ -46,6 +46,7 @@ algorithm
             intervalReverse.js:  区间反转链表
     leetcode
         hot100
+            isValid.js:  有效的括号
             towSum.js:  两数之和
 buildReadMe: ReadMe构建工具
 js
