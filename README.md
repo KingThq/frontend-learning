@@ -41,7 +41,7 @@ README generate thanks [daoerche](https://github.com/daoerche)
     Flex: flex学习
 algorithm
     List
-        ReverseList
+        reverseList
             index.js:  普通反转链表
             intervalReverse.js:  区间反转链表
 buildReadMe: ReadMe构建工具
