@@ -47,6 +47,7 @@ algorithm
     leetcode
         hot100
             isValid.js:  有效的括号
+            mergeTwoLists.js:  合并两个有序链表
             towSum.js:  两数之和
 buildReadMe: ReadMe构建工具
 js
