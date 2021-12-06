@@ -57,6 +57,7 @@ js
     myPromise.js:  手写 promise
     utils
         getDuplicateArr.js:  对象数组去重
+        getURLParameters.js:  获取URL的查询参数键值对
         storage.js:  封装 storage 方法
         urlPushState.js:  在 URL 上添加参数
 react
