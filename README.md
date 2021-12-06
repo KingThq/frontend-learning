@@ -46,10 +46,11 @@ algorithm
             intervalReverse.js:  区间反转链表
     leetcode
         hot100
-            isValid.js:  有效的括号
-            maxSubArray.js:  最大子数组和
-            mergeTwoLists.js:  合并两个有序链表
-            towSum.js:  两数之和
+            climbStairs.js:  leetcode 70.爬楼梯
+            isValid.js:  leetcode 20.有效的括号
+            maxSubArray.js:  leetcode 53.最大子数组和
+            mergeTwoLists.js:  leetcode 21.合并两个有序链表
+            towSum.js:  leetcode 1.两数之和
 buildReadMe: ReadMe构建工具
 js
     asyncRetryFn.js:  异步重试函数
