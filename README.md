@@ -50,6 +50,7 @@ algorithm
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
             isSymmetric.js:  leetcode 101.对称二叉树
             isValid.js:  leetcode 20.有效的括号
+            maxDepth.js:  leetcode 104.二叉树的最大深度
             maxSubArray.js:  leetcode 53.最大子数组和
             mergeTwoLists.js:  leetcode 21.合并两个有序链表
             towSum.js:  leetcode 1.两数之和
