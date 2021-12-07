@@ -48,6 +48,7 @@ algorithm
         hot100
             climbStairs.js:  leetcode 70.爬楼梯
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
+            isSymmetric.js:  leetcode 101.对称二叉树
             isValid.js:  leetcode 20.有效的括号
             maxSubArray.js:  leetcode 53.最大子数组和
             mergeTwoLists.js:  leetcode 21.合并两个有序链表
