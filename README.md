@@ -52,6 +52,7 @@ algorithm
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
             isSymmetric.js:  leetcode 101.对称二叉树
             isValid.js:  leetcode 20.有效的括号
+            majorityElement.js:  leetcode 169.多数元素
             maxDepth.js:  leetcode 104.二叉树的最大深度
             maxProfit.js:  leetcode 121.买卖股票的最佳时机
             maxSubArray.js:  leetcode 53.最大子数组和
