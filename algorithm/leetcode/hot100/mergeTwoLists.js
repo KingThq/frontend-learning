@@ -34,3 +34,41 @@ const mergeTwoLists = function(list1, list2) {
   p.next = list1 || list2;
   return preHead.next;
 };
+
+
+
+/**
+ * 带头节点的链表遍历
+ * preHead -> node1 -> node2 -> node3
+ *    ^
+ *    |
+ *    p
+ */
+while (p.next) {
+  doSomething(p.next);
+  p = p.next;
+}
+
+/**
+ * 不带头节点的链表遍历
+ * node1 -> node2 -> node3
+ *   ^
+ *   |
+ *   p
+ */
+ while (p) {
+  doSomething(p);
+  p = p.next;
+}
+
+/**
+ * 带2个头节点的链表遍历
+ * preHead -> preHead -> node1 -> node2 -> node3
+ *    ^
+ *    |
+ *    p
+ */
+ while (p.next.next) {
+  doSomething(p.next.next);
+  p = p.next;
+}
