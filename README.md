@@ -50,6 +50,7 @@ algorithm
             climbStairs.js:  leetcode 70.爬楼梯
             getIntersectionNode.js:  leetcode 160.相交链表
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
+            invertTree.js:  leetcode 226.翻转二叉树
             isSymmetric.js:  leetcode 101.对称二叉树
             isValid.js:  leetcode 20.有效的括号
             majorityElement.js:  leetcode 169.多数元素
