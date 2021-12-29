@@ -59,6 +59,7 @@ algorithm
             maxProfit.js:  leetcode 121.买卖股票的最佳时机
             maxSubArray.js:  leetcode 53.最大子数组和
             mergeTwoLists.js:  leetcode 21.合并两个有序链表
+            moveZeroes.js:  leetcode 283.移动零
             reverseList.js:  leetcode 206.反转链表
             singleNumber.js:  leetcode 136.只出现一次的数字
             towSum.js:  leetcode 1.两数之和
