@@ -23,3 +23,20 @@ const findDisappearedNumbers = function(nums) {
 
   return result;
 };
+
+const findDisappearedNumbers = function(nums) {
+  // 将所有正数作为数组下标，置对应数组值为负值
+  // 则仍为正数的位置即为（未出现过）消失的数字
+  for (let i = 0; i < nums.length; i++) {
+    nums[Math.abs(nums[i]) - 1] = -Math.abs(nums[Math.abs(nums[i]) - 1]);
+  }
+
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) {
+      res.push(i + 1);
+    }
+  }
+
+  return res;
+}
