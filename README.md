@@ -48,6 +48,7 @@ algorithm
         hot100
             MinStack.js:  leetcode 155.最小栈
             climbStairs.js:  leetcode 70.爬楼梯
+            countBits.js:  leetcode 338.比特位计数
             getIntersectionNode.js:  leetcode 160.相交链表
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
             invertTree.js:  leetcode 226.翻转二叉树
