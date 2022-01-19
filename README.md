@@ -51,6 +51,7 @@ algorithm
             countBits.js:  leetcode 338.比特位计数
             findDisappearedNumbers.js:  448.找到所有数组中消失的数字
             getIntersectionNode.js:  leetcode 160.相交链表
+            hammingDistance.js:  461.汉明距离
             inorderTraversal.js:  leetcode 94.二叉树的中序遍历
             invertTree.js:  leetcode 226.翻转二叉树
             isPalindrome.js:  leetcode 234.回文链表
