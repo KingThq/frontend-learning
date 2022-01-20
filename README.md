@@ -49,6 +49,7 @@ algorithm
             MinStack.js:  leetcode 155.最小栈
             climbStairs.js:  leetcode 70.爬楼梯
             countBits.js:  leetcode 338.比特位计数
+            diameterOfBinaryTree.js:  543.二叉树的直径
             findDisappearedNumbers.js:  448.找到所有数组中消失的数字
             getIntersectionNode.js:  leetcode 160.相交链表
             hammingDistance.js:  461.汉明距离
