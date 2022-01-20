@@ -6,29 +6,20 @@ import { parse, stringify } from 'querystring';
  * @param value 参数值
  */
 const urlPushState = (key, value) => {
-  const { href } = window.location;
-  const str = `${key}=${value}`;
+  const { search } = window.location;
+  const newSearch = search.replace(/^\?/g, '');
+  let queryObj = { [key]: value };
 
-  if (href.indexOf('?') > -1) {
-    const param = href.split('?')[1];
-    const paramObj = parse(param);
-    // console.log('url param:', href, param, paramObj);
-    if (key in paramObj) {
-      // 存在相同的参数名则替换值
-      if (value) {
-        paramObj[key] = value;
-      } else {
-        paramObj[key] = '';
-      }
-      window.history.pushState({}, '', `?${stringify(paramObj)}`);
-    } else if (param) {
-      window.history.pushState({}, '', `?${param}&${str}`);
-    } else {
-      window.history.pushState({}, '', `?${str}`);
-    }
-  } else {
-    window.history.pushState({}, '', `?${str}`);
+  if (newSearch) {
+    const query = parse(newSearch); // {[key]: value}
+    queryObj = Object.assign(query, queryObj);
   }
+  Object.keys(queryObj).forEach(k => {
+    if (queryObj[k] === undefined || queryObj[k] === null || queryObj[k] === '') {
+      delete queryObj[k];
+    }
+  });
+  window.history.pushState({}, '', `?${stringify(queryObj)}`);
 };
 
 /**
