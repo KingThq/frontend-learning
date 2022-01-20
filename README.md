@@ -62,6 +62,7 @@ algorithm
             maxDepth.js:  leetcode 104.二叉树的最大深度
             maxProfit.js:  leetcode 121.买卖股票的最佳时机
             maxSubArray.js:  leetcode 53.最大子数组和
+            mergeTrees.js:  617.合并二叉树
             mergeTwoLists.js:  leetcode 21.合并两个有序链表
             moveZeroes.js:  leetcode 283.移动零
             reverseList.js:  leetcode 206.反转链表
