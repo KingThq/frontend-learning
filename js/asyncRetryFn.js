@@ -60,7 +60,8 @@ class Test {
 
   fetchData = async () => {
     try {
-      await errorRetry(() => this.getData(), (e) => this.logFn(e));
+      const res = await asyncRetryFn(() => this.getData(), (e) => this.logFn(e));
+      console.log('asyncRetryFn 返回值：', res);
     } catch (error) {
       console.log('业务 error')
     }
