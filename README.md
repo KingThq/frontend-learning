@@ -70,8 +70,9 @@ algorithm
             towSum.js:  leetcode 1.两数之和
 buildReadMe: ReadMe构建工具
 js
+    Promise.js:  手写 promise
     asyncRetryFn.js:  异步重试函数
-    myPromise.js:  手写 promise
+    deepClone.js:  深复制
     utils
         getDuplicateArr.js:  对象数组去重
         getURLParameters.js:  获取URL的查询参数键值对
