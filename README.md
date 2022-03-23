@@ -72,7 +72,9 @@ buildReadMe: ReadMe构建工具
 js
     Promise.js:  手写 promise
     asyncRetryFn.js:  异步重试函数
+    debounce.js:  防抖
     deepClone.js:  深复制
+    throttle.js:  节流
     utils
         getDuplicateArr.js:  对象数组去重
         getURLParameters.js:  获取URL的查询参数键值对
