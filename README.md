@@ -75,6 +75,7 @@ js
     debounce.js:  防抖
     deepClone.js:  深复制
     reduce.js:  实现 数组 reduce
+    scheduler.js:  带并发的异步调度器 Scheduler
     throttle.js:  节流
     utils
         getDuplicateArr.js:  对象数组去重
