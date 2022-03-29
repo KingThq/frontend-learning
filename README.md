@@ -38,7 +38,7 @@ dirTitleHandle(rootPath);
 README generate thanks [daoerche](https://github.com/daoerche)
 
 <pre>Css
-    Flex: flex学习
+    layout: css 布局
 algorithm
     List
         reverseList

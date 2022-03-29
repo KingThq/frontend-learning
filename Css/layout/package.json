@@ -1,7 +1,7 @@
 {
-  "name": "flex",
+  "name": "layout",
   "version": "1.0.0",
-  "description": "flex学习",
+  "description": "css 布局",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
