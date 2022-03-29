@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平垂直居中</title>
+  <style>
+    .container {
+      height: 100vh;
+      width: 100%;
+    }
+    /* 1. flex */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      background: red;
+    }
+    
+    /* 2. 绝对定位 */
+    .container {
+      position: relative;
+    }
+    .content {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+    }
+
+    /* 3. 绝对定位 */
+    .container {
+      position: relative;
+    }
+    .content {
+      background: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 4. 绝对定位 */
+    .container {
+      position: relative;
+    }
+    .content {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">我是内容</div>
+  </div>
+</body>
+</html>
