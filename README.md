@@ -72,6 +72,7 @@ buildReadMe: ReadMe构建工具
 js
     Promise.js:  手写 promise
     asyncRetryFn.js:  异步重试函数
+    call.js:  call 实现
     debounce.js:  防抖
     deepClone.js:  深复制
     reduce.js:  实现 数组 reduce
