@@ -16,6 +16,9 @@ function debounce(func, wait, immediate) {
     let context = this;
     let args = arguments;
 
+    console.log('this:', this);
+    console.log('args:', args);
+
     console.log('timeout1:', timeout);
 
     if (timeout) clearTimeout(timeout);
@@ -45,6 +48,6 @@ const fn = debounce(() => {
 
 console.time();
 for(let i = 0; i < 4; i++) {
-  fn();
+  fn(i);
 }
 console.timeEnd();
