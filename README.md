@@ -73,6 +73,7 @@ js
     Promise.js:  手写 promise
     apply.js:  apply 实现
     asyncRetryFn.js:  异步重试函数
+    bind.js:  bind 实现
     call.js:  call 实现
     debounce.js:  防抖
     deepClone.js:  深复制
