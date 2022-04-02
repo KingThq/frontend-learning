@@ -71,6 +71,7 @@ algorithm
 buildReadMe: ReadMe构建工具
 js
     Promise.js:  手写 promise
+    apply.js:  apply 实现
     asyncRetryFn.js:  异步重试函数
     call.js:  call 实现
     debounce.js:  防抖

@@ -18,7 +18,7 @@ Function.prototype.myCall = function(context) {
 
   console.log('args:', args)
 
-  let result;
+  let result = null;
   result = context.fn(...args);
   delete context.fn;
   return result;
@@ -29,9 +29,11 @@ const obj = {
 };
 const a = 2;
 
-function func() {
+function func(s1, s2) {
+  console.log('s1:', s1);
+  console.log('s2:', s2);
   console.log(this.a);
 }
 
-func.myCall(obj); // 1
+func.myCall(obj, 9, 8); // 1
 func.myCall(null); // 2
