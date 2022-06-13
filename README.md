@@ -81,6 +81,7 @@ js
     scheduler.js:  带并发的异步调度器 Scheduler
     throttle.js:  节流
     utils
+        formatMoney.js:  格式化金额，每三位加逗号
         getDuplicateArr.js:  对象数组去重
         getURLParameters.js:  获取URL的查询参数键值对
         hideSomeNums.js:  隐藏银行卡号中间位数
