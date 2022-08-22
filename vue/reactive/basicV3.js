@@ -66,8 +66,8 @@ function trigger(target, key) {
  * const set = new Set([1])
  * set.forEach(item => {
  *  set.delete(1)
-*   set.add(1)
-*   console.log('遍历中)
+ *  set.add(1)
+ *  console.log('遍历中)
  * })
  * 
  * 如何解决：构造一个新的 Set 集合并遍历
