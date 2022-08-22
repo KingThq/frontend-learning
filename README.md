@@ -99,6 +99,7 @@ vue
         basicV3.js:  分支切换与 cleanup（避免副作用函数遗留问题）
         basicV4.js:  effect 嵌套和 effect 栈
         basicV5.js:  避免无限递归循环
+        basicV6.js:  调度执行（scheduler）与不展示过渡状态
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
