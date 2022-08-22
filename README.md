@@ -94,8 +94,8 @@ vue
     cases
         renderer.js:  简易版 vue 渲染器（创建节点）
     reactive
-        basic-package.js:  基础响应式系统（封装 track trigger 函数）
         basic.js:  基础响应式系统
+        basicV2.js:  基础响应式系统（封装 track trigger 函数）
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
