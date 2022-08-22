@@ -97,6 +97,7 @@ vue
         basic.js:  基础响应式系统
         basicV2.js:  基础响应式系统（封装 track trigger 函数）
         basicV3.js:  分支切换与 cleanup（避免副作用函数遗留问题）
+        basicV4.js:  effect 嵌套和 effect 栈
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
