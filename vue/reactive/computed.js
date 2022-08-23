@@ -26,6 +26,14 @@ function effect(fn, options = {}) {
   return effectFn;
 }
 
+function cleanup(effectFn) {
+  for (let i = 0; i < effectFn.deps.length; i++) {
+    const deps = effectFn.deps[i];
+    deps.delete(effectFn);
+  }
+  effectFn.deps.length = 0;
+}
+
 function computed(getter) {
   // value 用来缓存上一次计算的值
   let value;
@@ -55,8 +63,10 @@ function computed(getter) {
         // 将 dirty 置为 false，洗一次访问直接使用缓存到 value 中的值
         dirty = false;
       }
-      // 当读取 value 时，手动调用 track 函数进行追踪
-      track(obj, 'value');
+      if (activeEffect) {
+        // 当读取 value 时，手动调用 track 函数进行追踪
+        track(obj, 'value');
+      }
       return value;
     }
   };
@@ -112,21 +122,20 @@ function trigger(target, key) {
   });
 }
 
-function cleanup(effectFn) {
-  for (let i = 0; i < effectFn.deps.length; i++) {
-    const deps = effectFn.deps[i];
-    deps.delete(effectFn);
-  }
-  effectFn.deps.length = 0;
-}
-
 const sum = computed(() => obj.foo + obj.bar);
-// console.log(sum.value) // 3
-// 嵌套，可以正常执行
+console.log(sum.value) // 3
 // 如果注释 effect，保留 console.log 就会栈溢出
+// 原因：当 console.log 不包裹一个副作用的时候，副作用栈是空的，手动触发的 track 会进入 target[key] 这个逻辑，
+// 而这就相当于取值 obj.value，又是一次取值操作，因为没有副作用，会继续进入 target[key]，会循环调用。
+// 如何解决：obj get value() 中 track 代码改为如下：
+// if (activeEffect) {
+//   track(obj, 'value');
+// }
+
+// 嵌套，可以正常执行
 effect(() => {
   console.log('effect:', sum.value)
 })
 obj.foo++
-// obj.foo++ 
-// console.log(sum.value)
+obj.foo++
+console.log(sum.value)
