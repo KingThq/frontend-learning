@@ -101,6 +101,7 @@ vue
         basicV5.js:  避免无限递归循环
         basicV6.js:  调度执行（scheduler）与不展示过渡状态
         computed.js:  计算属性 computed 的实现
+        watch.js:  watch 的实现
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
