@@ -122,9 +122,11 @@ function cleanup(effectFn) {
 
 const sum = computed(() => obj.foo + obj.bar);
 // console.log(sum.value) // 3
-// 嵌套
+// 嵌套，可以正常执行
+// 如果注释 effect，保留 console.log 就会栈溢出
 effect(() => {
-  console.log(sum.value)
+  console.log('effect:', sum.value)
 })
 obj.foo++
-obj.foo++
+// obj.foo++ 
+// console.log(sum.value)
