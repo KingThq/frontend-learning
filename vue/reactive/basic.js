@@ -1,5 +1,5 @@
 /**
- * @title 响应式系统的实现
+ * @title 基础响应式系统的实现
  */
 
 const effectStack = [];
