@@ -94,13 +94,14 @@ vue
     cases
         renderer.js:  简易版 vue 渲染器（创建节点）
     reactive
-        basic.js:  基础响应式系统
+        basicV1.js:  基础响应式系统
         basicV2.js:  基础响应式系统（封装 track trigger 函数）
         basicV3.js:  分支切换与 cleanup（避免副作用函数遗留问题）
         basicV4.js:  effect 嵌套和 effect 栈
         basicV5.js:  避免无限递归循环
         basicV6.js:  调度执行（scheduler）与不展示过渡状态
         computed.js:  计算属性 computed 的实现
+        index.js:  响应式系统的实现
         watch.js:  watch 的实现
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
