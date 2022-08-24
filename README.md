@@ -101,6 +101,7 @@ vue
         basicV5.js:  避免无限递归循环
         basicV6.js:  调度执行（scheduler）与不展示过渡状态
         computed.js:  计算属性 computed 的实现
+        expiredEffect.js:  过期的副作用（竞态问题）
         index.js:  响应式系统的实现
         watch.js:  watch 的实现
 webpack
