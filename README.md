@@ -94,6 +94,11 @@ vue
     cases
         renderer.js:  简易版 vue 渲染器（创建节点）
     reactive
+        Proxy
+            Object
+                proxyGet1.js:  拦截读取操作（访问属性：obj.foo）
+                proxyGet2.js:  拦截读取操作（in 操作符：key in obj）
+                proxyGet3.js:  拦截读取操作（for...in 操作）
         basic.js:  基础响应式系统的实现
         basicV1.js:  基础响应式系统
         basicV2.js:  基础响应式系统（封装 track trigger 函数）
