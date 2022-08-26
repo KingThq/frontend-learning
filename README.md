@@ -96,6 +96,7 @@ vue
     reactive
         Proxy
             Object
+                createReactive.js:  创建响应式工厂函数
                 proxyDelete.js:  拦截删除操作 delete
                 proxyGet1.js:  拦截读取操作（访问属性：obj.foo）
                 proxyGet2.js:  拦截读取操作（in 操作符：key in obj）
