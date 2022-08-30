@@ -95,6 +95,9 @@ vue
         renderer.js:  简易版 vue 渲染器（创建节点）
     reactive
         Proxy
+            Array
+                indexAndLength.js:  数组索引与 length
+                traverse.js:  遍历数组
             Object
                 createReactive.js:  创建响应式工厂函数
                 proxyDelete.js:  拦截删除操作 delete

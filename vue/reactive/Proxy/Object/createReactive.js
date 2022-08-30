@@ -2,6 +2,8 @@
  * @title 创建响应式工厂函数
  */
 
+ const ITERATE_KEY = Symbol();
+
 /**
  * @param {*} obj 被代理的原始对象
  * @param {*} isShallow 代表是否为浅响应，默认为 false，即深响应
@@ -71,6 +73,12 @@ function createReactive(obj, isShallow = false, isReadonly = false) {
       }
 
       return res;
+    },
+    // 拦截读取操作（for...in 操作）
+    ownKeys(target) {
+      // 将副作用函数与 ITERATE_KEY 关联
+      track(target, ITERATE_KEY);
+      return Reflect.ownKeys(target);
     },
   });
 }
