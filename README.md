@@ -96,7 +96,10 @@ vue
     reactive
         Proxy
             Array
+                hideAffectLength.js:  隐式修改数组长度
+                index.js:  代理数组
                 indexAndLength.js:  数组索引与 length
+                indexOf.js:  数组的查找方法
                 traverse.js:  遍历数组
             Object
                 createReactive.js:  创建响应式工厂函数
