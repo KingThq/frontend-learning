@@ -80,6 +80,11 @@ function createReactive(obj, isShallow = false, isReadonly = false) {
       track(target, ITERATE_KEY);
       return Reflect.ownKeys(target);
     },
+    // 拦截读取操作（in 操作符：key in obj）
+    has(target, key) {
+      track(target, key);
+      return Reflect.has(target, key);
+    }
   });
 }
 
