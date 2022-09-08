@@ -108,6 +108,10 @@ vue
                 proxyGet2.js:  拦截读取操作（in 操作符：key in obj）
                 proxyGet3.js:  拦截读取操作（for...in 操作）
                 reasonableTriggerRes.js:  合理触发响应
+            SetAndMap
+                avoidEffectOriginalData.js:  避免污染原始数据
+                createReactive.js:  创建响应联系
+                sizeAndDelete.js:  对 size 和 delete 的代理
         basic.js:  基础响应式系统的实现
         basicV1.js:  基础响应式系统
         basicV2.js:  基础响应式系统（封装 track trigger 函数）
