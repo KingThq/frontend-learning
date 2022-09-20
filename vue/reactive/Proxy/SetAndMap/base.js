@@ -63,7 +63,16 @@ function trigger(target, key, type, newVal) {
   addEffectsToRun(effects, effectsToRun);
 
   // 当操作类型为 ADD 或 DELETE 时，需要触发与 ITERATE_KEY 相关联的副作用函数重新执行
-  if (type === 'ADD' || type === 'DELETE') {
+  if (
+    type === 'ADD' ||
+    type === 'DELETE' ||
+    // 如果操作类型是 SET，并且目标对象是 Map 类型的数据，
+    // 也应该触发那些与 ITERATE_KEY 相关联的副作用函数重新执行
+    (
+      type === 'SET' &&
+      Object.prototype.toString.call(target) === '[object Map]'
+    )
+  ) {
     const iterateEffects = depsMap.get(ITERATE_KEY);
     addEffectsToRun(iterateEffects, effectsToRun);
   }
@@ -101,27 +110,9 @@ function addEffectsToRun(effects, effectsToRun) {
   });
 }
 
-// 定义一个 Map 实例，存储原始对象到代理对象的映射
-const reactiveMap = new Map();
-
-// 创建深响应对象
-function reactive(obj) {
-   // 优先通过原始对象 obj 寻找之前创建的代理对象，如果找到了，直接返回已有的代理对象
-  const existionProxy = reactiveMap.get(obj);
-  if (existionProxy) return existionProxy;
-
-  // 否则，创建新的代理对象
-  const proxy = createReactive(obj);
-  // 存储到 Map 中，从而避免重复创建
-  reactiveMap.set(obj, proxy);
-
-  return proxy;
-}
-
 module.exports = {
   ITERATE_KEY,
   track,
   trigger,
   effect,
-  reactive,
 };
