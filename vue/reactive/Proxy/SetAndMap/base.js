@@ -110,8 +110,123 @@ function addEffectsToRun(effects, effectsToRun) {
   });
 }
 
+function createReactive(obj, isShallow = false, isReadonly = false) {
+  return new Proxy(obj, {
+    get(target, key, receiver) {
+      if (key === 'raw') return target;
+      if (key === 'size') {
+        track(target, ITERATE_KEY);
+        return Reflect.get(target, key, target);
+      }
+      return mutableInstrumentations[key];
+    }
+  });
+}
+
+const reactiveMap = new Map();
+
+function reactive(obj) {
+  const existionProxy = reactiveMap.get(obj);
+  if (existionProxy) return existionProxy;
+
+  const proxy = createReactive(obj);
+  reactiveMap.set(obj, proxy);
+  return proxy;
+}
+
+// 定义一个对象，将自定义的集合方法定义到该对象下
+const mutableInstrumentations = {
+  add(key) {
+    const target = this.raw;
+    const had = target.has(key);
+    const res = target.add(key);
+
+    if (!had) {
+      // 不存在的情况下才需要触发响应
+      trigger(target, key, 'ADD');
+    }
+    return res;
+  },
+  delete(key) {
+    const target = this.raw;
+    const had = target.has(key);
+    const res = target.delete(key);
+
+    if (had) {
+      // 当需要删除的元素确实存在时，才触发响应
+      trigger(target, key, 'DELETE');
+    }
+    return res;
+  },
+  get(key) {
+    const target = this.raw;
+    const had = target.has(key);
+
+    track(target, key);
+    if (had) {
+      // 如果存在，则返回结果。如果得到的结果 res 仍然是可代理的数据，则要返回使用 reactive 包装后的响应式数据
+      const res = target.get(key);
+      return typeof res === 'object' ? reactive(res) : res;
+    }
+  },
+  set(key, value) {
+    const target = this.raw;
+    const had = target.has(key);
+    const oldValue = target.get(key);
+
+    // 获取原始数据，由于 value 本身可能已经是原始数据，所以此时 value.raw 不存在，则直接使用 value，避免污染原始数据
+    let rawValue = value;
+    if (Object.prototype.toString.call(target) === '[object Map]' && typeof value === 'object') {
+      rawValue = value.raw;
+    }
+    target.set(key, rawValue);
+
+    if (!had) {
+      trigger(target, key, 'ADD');
+    } else if (oldValue !== value || (oldValue === oldValue && value === value)) {
+      trigger(target, key, 'SET');
+    }
+  },
+  forEach(callback, thisArg) {
+    const wrap = (val) => typeof val === 'object' ? reactive(val) : val;
+    const target = this.raw;
+    track(target, ITERATE_KEY);
+    target.forEach((v, k) => {
+      // 手动调用 callback，用 wrap 函数包裹 value 和 key 后再传给 callback，这样就实现了深响应
+      callback.call(thisArg, wrap(v), wrap(k), this);
+    });
+  },
+  [Symbol.iterator]: iterationMethod,
+  entries: iterationMethod,
+};
+
+function iterationMethod() {
+  const target = this.raw;
+  const itr = target[Symbol.iterator]();
+
+  const wrap = (val) => typeof val === 'object' && val !== null ? reactive(val) : val;
+
+  track(target, ITERATE_KEY);
+
+  return {
+    // 迭代器协议
+    next() {
+      const { value, done } = itr.next();
+      return {
+        value: value ? [wrap(value[0]), wrap(value[1])] : value,
+        done,
+      }
+    },
+    // 可迭代协议
+    [Symbol.iterator]() {
+      return this;
+    }
+  }
+}
+
 module.exports = {
   ITERATE_KEY,
+  mutableInstrumentations,
   track,
   trigger,
   effect,

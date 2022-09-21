@@ -112,6 +112,7 @@ vue
                 avoidEffectOriginalData.js:  避免污染原始数据
                 createReactive.js:  创建响应联系
                 forEach.js:  处理 forEach
+                iterator.js:  迭代器方法
                 sizeAndDelete.js:  对 size 和 delete 的代理
         basic.js:  基础响应式系统的实现
         basicV1.js:  基础响应式系统

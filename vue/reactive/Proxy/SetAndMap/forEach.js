@@ -98,7 +98,7 @@ function reactive(obj) {
 //   });
 // });
 // // 能触发响应
-// p.set([{ key: 2 }, { value: 2 }]);
+// p.set({ key: 2 }, { value: 2 });
 
 // const key = { key: 1 };
 // const value = new Set([1, 2, 3]);

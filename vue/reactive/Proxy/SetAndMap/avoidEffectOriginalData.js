@@ -48,10 +48,10 @@ const mutableInstrumentations = {
 
     // 如果不存在则说明是 ADD 类型的操作
     if (!had) {
-      trigger(target, key, 'ADD', value);
+      trigger(target, key, 'ADD');
     } else if (oldValue !== value || (oldValue === oldValue && value === value)) {
       // 如果不存在，并且值变了，则是 SET 类型的操作
-      trigger(target, key, 'SET', value);
+      trigger(target, key, 'SET');
     }
   },
 };
