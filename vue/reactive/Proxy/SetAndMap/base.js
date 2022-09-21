@@ -3,6 +3,7 @@
  */
 
 const ITERATE_KEY = Symbol();
+const MAP_KEY_ITERATE_KEY = Symbol();
 
 const bucket = new WeakMap();
 const effectStack = [];
@@ -74,6 +75,18 @@ function trigger(target, key, type, newVal) {
     )
   ) {
     const iterateEffects = depsMap.get(ITERATE_KEY);
+    addEffectsToRun(iterateEffects, effectsToRun);
+  }
+
+  // Map keys() 方法处理不必要的更新
+  if (
+    // 操作类型为 ADD 或 DELETE
+    (type === 'ADD' || type === 'DELETE') &&
+    // 并且是 Map 类型的数据
+    Object.prototype.toString.call(target) === '[object Map]'
+  ) {
+    // 取出那些与 MAP_KEY_ITERATE_KEY 相关联的副作用函数并执行
+    const iterateEffects = depsMap.get(MAP_KEY_ITERATE_KEY);
     addEffectsToRun(iterateEffects, effectsToRun);
   }
 
@@ -226,8 +239,10 @@ function iterationMethod() {
 
 module.exports = {
   ITERATE_KEY,
+  MAP_KEY_ITERATE_KEY,
   mutableInstrumentations,
   track,
   trigger,
   effect,
+  reactive,
 };
