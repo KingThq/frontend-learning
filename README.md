@@ -128,7 +128,9 @@ vue
         expiredEffect.js:  过期的副作用（竞态问题）
         watch.js:  watch 的实现
     renderer
-        base.js:  自定义渲染器
+        mountAndUpdate
+            childrenAndAttribute.js:  挂载子节点和元素的属性
+        simple.js:  自定义渲染器
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
