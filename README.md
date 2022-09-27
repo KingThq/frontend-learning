@@ -127,6 +127,8 @@ vue
         computed.js:  计算属性 computed 的实现
         expiredEffect.js:  过期的副作用（竞态问题）
         watch.js:  watch 的实现
+    renderer
+        base.js:  自定义渲染器
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
     largeNumber: 大整数加法打包(打包基础库)
