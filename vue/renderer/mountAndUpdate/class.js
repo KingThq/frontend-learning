@@ -72,20 +72,20 @@ const renderer = createRenderer({
   insert(el, parent, anchor = null) {
     parent.insertBefore(el, anchor);
   },
-  patchProps(el, key, preValue, newValue) {
+  patchProps(el, key, prevValue, nextValue) {
     // 对 class 进行特殊处理
     // el.calssName 性能最优
     if (key === 'class') {
-      el.className = newValue || '';
-    } else if (shouldSetAsProps(el, key, newValue)) {
+      el.className = nextValue || '';
+    } else if (shouldSetAsProps(el, key, nextValue)) {
       const type = typeof el[key];
-      if (type === 'boolean' && newValue === '') {
+      if (type === 'boolean' && nextValue === '') {
         el[key] = true;
       } else {
-        el[key] = newValue;
+        el[key] = nextValue;
       }
     } else {
-      el.setAttribute(key, newValue);
+      el.setAttribute(key, nextValue);
     }
   },
 });
