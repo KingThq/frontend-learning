@@ -130,6 +130,7 @@ vue
     renderer
         mountAndUpdate
             childrenAndAttribute.js:  挂载子节点和元素的属性
+            class.js:  class 的处理
         simple.js:  自定义渲染器
 webpack
     builderWebpack: 构建基础包配置及冒烟测试和单元测试
