@@ -132,6 +132,7 @@ vue
             childrenAndAttribute.js:  挂载子节点和元素的属性
             class.js:  class 的处理
             event.js:  事件的处理
+            eventBubbleAndUpdateTiming.js:  事件冒泡与更新时机问题
             unmount.js:  卸载操作和区分 vnode 的类型
         simple.js:  自定义渲染器
 webpack
