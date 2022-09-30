@@ -129,6 +129,7 @@ vue
         watch.js:  watch 的实现
     renderer
         mountAndUpdate
+            Fragment.js:  Fragment
             TextAndComment.js:  文本节点和注释节点
             childernUpdate.js:  更新子节点
             childrenAndAttribute.js:  挂载子节点和元素的属性
