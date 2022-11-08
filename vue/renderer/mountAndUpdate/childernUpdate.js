@@ -150,7 +150,7 @@ const renderer = createRenderer({
     if (/^on/.test(key)) {
       const invokers = el._vei || (el._vei = {});
       let invoker = invokers[key];
-      const name = key.slice(2).toLocaleLowerCase();
+      const name = key.slice(2).toLowerCase();
       if (nextValue) {
         if (!invoker) {
           invoker = el._vei[key] = (e) => {

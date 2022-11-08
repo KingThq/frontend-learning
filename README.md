@@ -128,6 +128,8 @@ vue
         expiredEffect.js:  过期的副作用（竞态问题）
         watch.js:  watch 的实现
     renderer
+        Diff
+            simpleDiff.js:  简单 Diff 算法
         mountAndUpdate
             Fragment.js:  Fragment
             TextAndComment.js:  文本节点和注释节点

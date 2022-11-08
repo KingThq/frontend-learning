@@ -90,7 +90,7 @@ const renderer = createRenderer({
       // 获取为该元素伪造的事件处理函数 invoker
       let invoker = invokers[key];
       // 根据属性名称得到对应的事件名称 例如 onClick ---> click
-      const name = key.slice(2).toLocaleLowerCase();
+      const name = key.slice(2).toLowerCase();
       if (nextValue) {
         if (!invoker) {
           // 如果没有 invoker，则将一个伪造的 invoker 缓存到 el._vei[key] 中，避免覆盖
