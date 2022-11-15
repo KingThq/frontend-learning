@@ -265,8 +265,8 @@ const renderer = createRenderer({
       if (nextValue) {
         if (!invoker) {
           invoker = el.vei[key] = (e) => {
-            // 如果时间发生的时间早于事件处理函数绑定的时间，则不执行事件处理函数
-            if (e.timestamp < invoker.attached) return;
+            // 如果事件发生的时间早于事件处理函数绑定的时间，则不执行事件处理函数
+            if (e.timeStamp < invoker.attached) return;
             if (Array.isArray(invoker.value)) {
               invoker.value.forEach(fn => fn(e));
             } else {

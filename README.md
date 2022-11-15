@@ -129,6 +129,7 @@ vue
         watch.js:  watch 的实现
     renderer
         Diff
+            doubleEndedDiff.js:  双端 Diff 算法
             simpleDiff.js:  简单 Diff 算法
         mountAndUpdate
             Fragment.js:  Fragment
