@@ -118,7 +118,7 @@ const renderer = createRenderer({
         if (!invoker) {
           invoker = el._vei[key] = (e) => {
             // e.timeStamp 是事件发生的时间
-            // 如果时间发生的时间早于事件处理函数绑定的时间，则不执行事件处理函数
+            // 如果事件发生的时间早于事件处理函数绑定的时间，则不执行事件处理函数
             if (e.timeStamp < invoker.attached) return;
             if (Array.isArray(invoker.value)) {
               invoker.value.forEach(fn => fn(e));

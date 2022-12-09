@@ -93,6 +93,9 @@ react
 vue
     cases
         renderer.js:  简易版 vue 渲染器（创建节点）
+    component
+        implementationPrinciple
+            index.js:  组件的实现原理
     reactive
         Proxy
             Array

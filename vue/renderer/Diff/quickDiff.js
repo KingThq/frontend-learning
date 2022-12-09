@@ -94,7 +94,7 @@ function createRenderer(options) {
     // 更新相同的后置节点
     // 索引 oldEnd 指向旧的一组子节点的最后一个节点
     let oldEnd = oldChildren.length - 1;
-    // 缩影 newEnd 指向新的一组子节点的最后一个节点
+    // 索引 newEnd 指向新的一组子节点的最后一个节点
     let newEnd = newChildren.length - 1;
     
     oldVNode = oldChildren[oldEnd];
@@ -189,7 +189,7 @@ function createRenderer(options) {
         let i = count - 1;
         for (i; i >= 0; i--) {
           if (source[i] === -1) {
-            // 说明索引为 i 的节点时全新的节点，应该将其挂载
+            // 说明索引为 i 的节点是全新的节点，应该将其挂载
             // 该节点在新 children 中的真实位置索引
             const pos = i + newStart;
             const newVNode = newChildren[pos];
@@ -315,7 +315,7 @@ const renderer = createRenderer({
       if (nextValue) {
         if (!invoker) {
           invoker = el._vei[key] = (e) => {
-            if (e.timeStamp < el.attached) return;
+            if (e.timeStamp < invoker.attached) return;
             if (Array.isArray(invoker.value)) {
               invoker.value.forEach(fn => fn(e));
             } else {
