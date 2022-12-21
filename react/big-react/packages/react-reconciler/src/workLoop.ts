@@ -40,10 +40,18 @@ function renderRoot(root: FiberRootNode) {
 			workLoop();
 			break;
 		} catch (error) {
-			console.warn('workLoop 发生错误', error);
+			if (__DEV__) {
+				console.warn('workLoop 发生错误', error);
+			}
 			workInProgress = null;
 		}
 	} while (true);
+
+	const finishedWork = root.current.alternate;
+	root.finishedWork = finishedWork;
+
+	// 根据 wip fiberNode 树和树中的 flags 执行具体的 DOM 操作
+	commitRoot(root);
 }
 
 function workLoop() {
