@@ -87,6 +87,7 @@ js
         hideSomeNums.js:  隐藏银行卡号中间位数
         storage.js:  封装 storage 方法
         urlPushState.js:  在 URL 上添加参数
+        validateNumber.js:  判断是否是有效的数字
 react
     big-react: 从0实现React18
     hooks
